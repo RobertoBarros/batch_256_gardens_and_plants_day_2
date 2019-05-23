@@ -1,0 +1,20 @@
+<div class="container">
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="mb-5">Create Tag from <%= @plant.name %></h1>
+      <%= simple_form_for [@plant, @plant_tag] do |form|%>
+
+        <%= form.input :tag, collection: Tag.all.order(:name), input_html: { multiple: true, class: 'select2'}, include_hidden: false %>
+
+        <%= form.submit "Add Tag", class: 'btn btn-primary' %>
+
+      <% end %>
+
+    </div>
+
+  </div>
+
+
+</div>
+
